@@ -15,4 +15,16 @@ class EulerMath {
 		}
 		return terms
 	}
+
+	static def primeFactors(long multiplicand) {
+		def factors = []
+		def max = Math.floor(Math.sqrt(multiplicand))
+		for (int i = 2; i < max; i++) {
+			while (multiplicand % i == 0) {
+				factors << i
+				multiplicand = multiplicand / i
+			}
+		}
+		return factors
+	}
 }
